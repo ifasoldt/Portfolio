@@ -204,6 +204,8 @@ hr.small {
 
 .img-portfolio {
     margin: 0 auto;
+    height: 297px;
+  width: 100%;
 }
 
 .img-portfolio:hover {
@@ -263,11 +265,28 @@ footer {
 }
 
 .love-hate-bar{
-  background-color: #231F20;
-  color: white;
+  border-left: 20px solid white;
 }
 
 .about-me {
   color:white;
   background-color: #82D5C8;
 }
+
+.love{
+  list-style: circle;
+  font-size: 18px;
+}
+.hate{
+  list-style: circle;
+  font-size: 18px;
+}
+
+/*.row.match-my-cols {
+    overflow: hidden;
+}
+
+.row.match-my-cols [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}*/
