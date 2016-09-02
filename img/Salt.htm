@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://infinite-cove-48463.herokuapp.com/current_user/dashboard -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Salt</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="lseel+omGKEPGRfIOgyXeleY0DIZV9i2128NNvk6/QPKePUGCXSTnyZo70YCaadrTYy4c6kQPt4DPi3lZS7+SA==">
+    <link rel="stylesheet" media="all" href="./Salt_files/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload">
+    <script src="./Salt_files/application-d920d606a049810d41278224d8e51c6b25fe95ea449554e4cd495d78faac9b60.js" data-turbolinks-track="reload"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Salt_files/bootstrap.min.css">
+    <link href="./Salt_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./Salt_files/font-awesome.min.css">
+    <link href="./Salt_files/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Salt_files/flatpickr.min.css">
+    <link rel="stylesheet" href="./Salt_files/header.css">
+    <link rel="stylesheet" href="./Salt_files/footer.css">
+    <link rel="icon" href="https://infinite-cove-48463.herokuapp.com/assets/saltfavicon.png">
+        <link rel="stylesheet" href="./Salt_files/dashboard.css">
+
+  </head>
+
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-4 col-sm-8">
+            <div class="header_img">
+              <a href="https://infinite-cove-48463.herokuapp.com/"><img src="./Salt_files/whitesalticon.png" alt="salt"></a>
+            </div>
+            <div class="homePageHidden">
+                <div class="hidden-xs visible-sm visible-md visible-lg">
+                  <form method="get" action="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" enctype="multipart/form-data">
+                    <div class="navSearchContainer">
+                      <div class="navButtonContainer center-block">
+                        <button type="button" class="btn" id="navSubmitSearch"><i class="fa fa-search navSearchIcon" aria-hidden="true"></i></button>
+                      </div>
+                      <div class="navCityContainer">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="navLocation" name="navLocation" placeholder="Where Do You Want To Search?" required="">
+                          <span id="error" class="hiddenError error">All Fields Need Values</span>
+                        </div>
+                      </div>
+                      <div class="navDateFrom">
+                        <div class="form-group">
+                          <input type="text" class="form-control flatpickr flatpickr-input" data-date-format="m-d-Y" id="nav_starting_date" name="nav_starting_date" placeholder="From" required="" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="navArrowContainer">
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                      </div>
+                      <div class="navDateTo">
+                        <div class="form-group">
+                          <input type="text" class="form-control flatpickr flatpickr-input" data-date-format="m-d-Y" id="nav_ending_date" name="nav_ending_date" placeholder="To" required="" readonly="readonly">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="navMobileSearchIcon visible-xs hidden-sm">
+                <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" id="hiddenNavAnchor"><i class="fa fa-search" id="searchGlass" aria-hidden="true"></i></a>
+              </div>
+              <div class="visible-xs hidden-sm navBarMobile">
+                  <div id="hiddenNav" class="hideSearch">
+                      <form method="get" action="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" enctype="multipart/form-data">
+                        <div class="navMobileSearchContainer">
+                          <div class="navMobileCityContainer">
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="nav_mobile_Location" name="navLocation" placeholder="Where?" required="">
+                            <span style="opacity: 1; left: 0px; top: 18.5px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: none; visibility: visible; z-index: auto; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAANCAYAAABLjFUnAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarZG9SsNQGIaf04qCQxAJbsLBQVzEn61j0pYiONQokmRrkkMVbXI4Of508ia8CAcXR0HvoOIgOHkJboI4ODgECU4i+EzP9w4vL3zQWPE6frcxB6PcmqDnyzCK5cwj0zQBYJCW2uv3twHyIlf8RMD7MwLgadXr+F3+xmyqjQU+gc1MlSmIdSA7s9qCuATc5EhbEFeAa/aCNog7wBlWPgGcpPIXwDFhFIN4BdxhGMXQAHCTyl3AtercArQLPTaHwwMrN1qtlvSyIlFyd1xaNSrlVp4WRhdmYFUGVPuq3Z7Wx0oGPZ//JYxiWdnbDgIQC5M6q0lPzOn3D8TD73fdMb4HL4Cp2zrb/4DrNVhs1tnyEsxfwI3+AvOlUD7FY+VVAAAAIGNIUk0AAHolAACAgwAA9CUAAITRAABtXwAA6GwAADyLAAAbWIPnB3gAAAECSURBVHjapNK9K8UBFIfxD12im8LEYLgZjcpgUFgUCUlZTJRkMpqUxR+hDFIGhWwGwy0MFiUxSCbZ5DXiYjnqdvvpvnim0+mcZ/ieU9U6tySBNEbQjBpMoANZnGIdl4VLKcm8YCPqbgzhAT1ox1mSrFpxjtCHLdygH5tJgymlMYhhtKH+r6FishYsYBpN0dvFHu5wi9okWToC/0AmcpqM+pd7PKMRDajDNb5xlS97Qyem0BsL8IT9uOAhXpGLvL/wGXO5fFkOO7FwHvJtLOOilGALM8vE1d6xiFVlkP8aXTjAI8bKFeXLBuJ3shjFiQpIYR6zWMFaXFOlsnHM4Ng/+RkAdVE2mEeC7WYAAAAASUVORK5CYII=&quot;); background-size: 19px 13px; background-position: 0px 0px; background-repeat: no-repeat;"></span></div>
+                          </div>
+                          <div class="navMobileDateFrom">
+                            <div class="form-group">
+                              <input type="text" class="form-control flatpickr flatpickr-input" data-date-format="m-d-Y" id="nav_mobile_starting_date" name="nav_starting_date" placeholder="From" required="" readonly="readonly">
+                            <span style="opacity: 1; left: 0px; top: 18.5px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: none; visibility: visible; z-index: auto; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAANCAYAAABLjFUnAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarZG9SsNQGIaf04qCQxAJbsLBQVzEn61j0pYiONQokmRrkkMVbXI4Of508ia8CAcXR0HvoOIgOHkJboI4ODgECU4i+EzP9w4vL3zQWPE6frcxB6PcmqDnyzCK5cwj0zQBYJCW2uv3twHyIlf8RMD7MwLgadXr+F3+xmyqjQU+gc1MlSmIdSA7s9qCuATc5EhbEFeAa/aCNog7wBlWPgGcpPIXwDFhFIN4BdxhGMXQAHCTyl3AtercArQLPTaHwwMrN1qtlvSyIlFyd1xaNSrlVp4WRhdmYFUGVPuq3Z7Wx0oGPZ//JYxiWdnbDgIQC5M6q0lPzOn3D8TD73fdMb4HL4Cp2zrb/4DrNVhs1tnyEsxfwI3+AvOlUD7FY+VVAAAAIGNIUk0AAHolAACAgwAA9CUAAITRAABtXwAA6GwAADyLAAAbWIPnB3gAAAECSURBVHjapNK9K8UBFIfxD12im8LEYLgZjcpgUFgUCUlZTJRkMpqUxR+hDFIGhWwGwy0MFiUxSCbZ5DXiYjnqdvvpvnim0+mcZ/ieU9U6tySBNEbQjBpMoANZnGIdl4VLKcm8YCPqbgzhAT1ox1mSrFpxjtCHLdygH5tJgymlMYhhtKH+r6FishYsYBpN0dvFHu5wi9okWToC/0AmcpqM+pd7PKMRDajDNb5xlS97Qyem0BsL8IT9uOAhXpGLvL/wGXO5fFkOO7FwHvJtLOOilGALM8vE1d6xiFVlkP8aXTjAI8bKFeXLBuJ3shjFiQpIYR6zWMFaXFOlsnHM4Ng/+RkAdVE2mEeC7WYAAAAASUVORK5CYII=&quot;); background-size: 19px 13px; background-position: 0px 0px; background-repeat: no-repeat;"></span></div>
+                          </div>
+                          <div class="navMobileDateTo">
+                            <div class="form-group">
+                              <input type="text" class="form-control flatpickr flatpickr-input" data-date-format="m-d-Y" id="nav_mobile_ending_date" name="nav_ending_date" placeholder="To" required="" readonly="readonly">
+                            <span style="opacity: 1; left: 0px; top: 18.5px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: none; visibility: visible; z-index: auto; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAANCAYAAABLjFUnAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarZG9SsNQGIaf04qCQxAJbsLBQVzEn61j0pYiONQokmRrkkMVbXI4Of508ia8CAcXR0HvoOIgOHkJboI4ODgECU4i+EzP9w4vL3zQWPE6frcxB6PcmqDnyzCK5cwj0zQBYJCW2uv3twHyIlf8RMD7MwLgadXr+F3+xmyqjQU+gc1MlSmIdSA7s9qCuATc5EhbEFeAa/aCNog7wBlWPgGcpPIXwDFhFIN4BdxhGMXQAHCTyl3AtercArQLPTaHwwMrN1qtlvSyIlFyd1xaNSrlVp4WRhdmYFUGVPuq3Z7Wx0oGPZ//JYxiWdnbDgIQC5M6q0lPzOn3D8TD73fdMb4HL4Cp2zrb/4DrNVhs1tnyEsxfwI3+AvOlUD7FY+VVAAAAIGNIUk0AAHolAACAgwAA9CUAAITRAABtXwAA6GwAADyLAAAbWIPnB3gAAAECSURBVHjapNK9K8UBFIfxD12im8LEYLgZjcpgUFgUCUlZTJRkMpqUxR+hDFIGhWwGwy0MFiUxSCbZ5DXiYjnqdvvpvnim0+mcZ/ieU9U6tySBNEbQjBpMoANZnGIdl4VLKcm8YCPqbgzhAT1ox1mSrFpxjtCHLdygH5tJgymlMYhhtKH+r6FishYsYBpN0dvFHu5wi9okWToC/0AmcpqM+pd7PKMRDajDNb5xlS97Qyem0BsL8IT9uOAhXpGLvL/wGXO5fFkOO7FwHvJtLOOilGALM8vE1d6xiFVlkP8aXTjAI8bKFeXLBuJ3shjFiQpIYR6zWMFaXFOlsnHM4Ng/+RkAdVE2mEeC7WYAAAAASUVORK5CYII=&quot;); background-size: 19px 13px; background-position: 0px 0px; background-repeat: no-repeat;"></span></div>
+                          </div>
+                          <div class="navMobileButtonContainer center-block">
+                            <button type="button" class="btn" id="navMobileSubmitSearch"><i class="fa fa-search navSearchIcon" aria-hidden="true"></i></button>
+                          </div>
+                        </div>
+                        <div id="mobileError" class="hiddenError error">
+                          All Fields Need Values
+                        </div>
+                      </form>
+                    </div>
+                </div>
+              </div>
+              <div class="col-xs-8 col-sm-4" id="profile-box" data-id="1">
+                <div class="header_links">
+                  <nav class="nav_effect">
+                <a rel="nofollow" data-method="delete" href="https://infinite-cove-48463.herokuapp.com/logout">Logout</a>
+                  </nav>
+                  <div class="header_profile">
+                    <div id="navDropdown">
+                    <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" alt="Profile Image">
+                        <img class="img-circle header_profile_image" src="./Salt_files/file" alt="File">
+                    </a>
+                    </div>
+                    <div id="navDropdownMenu" class="menu" style="display:none">
+                      <ul class="navDropdownMenuItems">
+                        <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard"><li>Profile</li></a>
+                        <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#"><li>Host</li></a>
+                        <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#"><li>Inbox</li></a>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      
+    </header>
+    <div class="margin-top"></div>
+    
+  <div id="renderUser"><div data-reactroot="" class="container-fluid"><div class="row"><div class="col-xs-12 col-sm-6 col-md-4 user_info"><div class="visible-xs hidden-sm hidden-md hidden-lg"><div class="profileNameBox"><h1><!-- react-text: 7 -->Welcome Back, <!-- /react-text --><!-- react-text: 87 -->Isaiah Fasoldt<!-- /react-text --></h1><h3 class="aboutYou">About You:</h3><div class="aboutMeDescriptionBox"><h5>I'm a back-end developer who also enjoys using front-end frameworks such as React. I love to meet new and different people and hope to see you at various events. I love to cook and receive feedback on my dishes so that I can get better! Currently, I'm working on learning to cook vegetarian and South Asian cuisine.</h5></div></div></div><div class="center-block profileImageBox"><img class="user_image center-block img-responsive" src="./Salt_files/file(1)"><div class="center-block eventsInfoBox"><span><span class="eventsSpan">Events hosted:</span><!-- react-text: 88 -->1<!-- /react-text --></span><span><span class="eventsSpan">Events attended:</span><!-- react-text: 89 -->0<!-- /react-text --></span></div></div><div class="center-block personelInfoBox"><div class="personelContainer"><div class="iconContainer"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div><div class="infoContainer"><h4>Date of Birth</h4><p>December 08, 1988</p></div></div><div class="personelContainer"><div class="iconContainer"><i class="fa fa-phone-square" aria-hidden="true"></i></div><div class="infoContainer"><h4>Phone Number</h4><p>630-962-2687</p></div></div><div class="personelContainer"><div class="iconContainer"><i class="fa fa-globe" aria-hidden="true"></i></div><div class="infoContainer"><h4>Address:</h4><div class="user_street">2924 South County Rd 250W</div><span class="user_city"><!-- react-text: 90 -->Greencastle<!-- /react-text --><!-- react-text: 38 -->,<!-- /react-text --></span><span class="user_city"><!-- react-text: 91 -->Greencastle<!-- /react-text --><!-- react-text: 40 -->,<!-- /react-text --></span><span class="user_state">Indiana</span><span class="user_zip">46135</span></div></div></div><div class="center-block buttonsBox"><a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" data-toggle="modal" data-target="#eventModal"><button class="btn">Create Event</button></a><a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" data-toggle="modal" data-target="#profileModal"><button class="btn">Edit Profile</button></a></div></div><div class="col-xs-12 col-sm-6 col-md-8"><div class="hidden-xs visible-sm visible-md visible-lg"><div class="profileNameBox"><h1><!-- react-text: 52 -->Welcome Back, <!-- /react-text --><!-- react-text: 92 -->Isaiah Fasoldt<!-- /react-text --></h1><h3 class="aboutYou">About You:</h3><div class="aboutMeDescriptionBox"><h5>I'm a back-end developer who also enjoys using front-end frameworks such as React. I love to meet new and different people and hope to see you at various events. I love to cook and receive feedback on my dishes so that I can get better! Currently, I'm working on learning to cook vegetarian and South Asian cuisine.</h5></div></div></div><ul class="nav nav-pills"><li role="presentation"><a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard" style="color: white; background-color: black;">Events Hosting</a></li><li role="presentation"><a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard/attending">Events Attending</a></li><li role="presentation"><a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard/inbox">Inbox</a></li></ul><div class="scroll_box"><div><div class="panel panel-default"><div class="panel-heading">Demo Day</div><table class="table"><thead><tr><th class="nameHeader">Name</th><th class="quantityHeader">Guests</th><th class="messageHeader">Messages</th><th class="statusHeader">Status</th></tr></thead><tbody><tr><td scope="row" class="user_profile"><a href="https://infinite-cove-48463.herokuapp.com/users/2"><img class="profile_image img-circle" src="./Salt_files/file(2)"><!-- react-text: 79 -->Jake Willingham<!-- /react-text --></a></td><td>2</td><td><i>Me and my wife</i></td><td><div><span style="color: red;">Denied</span><i data-id="1" data-stat-id="approved" data-app-id="1" class="fa fa-check-circle accept_application" data-toggle="tooltip" data-placement="bottom" title="Accept Application" aria-hidden="true" style="color: lightgreen;" data-original-title="Reject Application"></i></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+
+<div class="modal fade" id="profileModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Edit Profile</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" id="current_profile" data-id="1" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" value="Isaiah" id="first_name" name="first_name">
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" value="Fasoldt" id="last_name" name="last_name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" value="ifasoldt@gmail.com" id="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="date_of_birth">Date Of Birth <span class="text-muted">(MM/DD/YYYY)</span></label>
+            <input type="text" class="form-control" value="12/08/1988" id="date_of_birth" name="date_of_birth">
+          </div>
+          <div class="form-group">
+            <label for="images_files_profile">Profile Image</label>
+            <input type="file" class="form-control" name="images_files_profile" id="images_files_profile">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="text-muted">(XXX-XXX-XXXX)</span></label>
+            <input type="text" class="form-control" value="630-962-2687" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="description">Give A Brief Description Of Yourself</label>
+            <textarea type="text" id="descriptionBio" class="form-control text_input" name="description">I'm a back-end developer who also enjoys using front-end frameworks such as React. I love to meet new and different people and hope to see you at various events. I love to cook and receive feedback on my dishes so that I can get better! Currently, I'm working on learning to cook vegetarian and South Asian cuisine.</textarea>
+          </div>
+          <a href="https://infinite-cove-48463.herokuapp.com/users/new/password">Change Password</a>
+          <br>
+          <h4>Address</h4>
+          <hr>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" id="street" value="2924 South County Rd 250W" name="street">
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" value="Greencastle" id="city" name="city">
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state" selected="Indiana" value="Indiana" class="form-control">
+                <option selected="" value="Indiana">Indiana</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="District Of Columbia">District Of Columbia</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip Code</label>
+            <input type="text" class="form-control" value="46135" id="zip" name="zip">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn_submit_profile" class="btn btn-default">
+          <span>Submit</span>
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="eventModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Event</h4>
+      </div>
+
+      <div class="modal-body">
+        <form method="post" action="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="title">Event Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+          </div>
+          <div class="form-group">
+            <label for="images_files">Event Image</label>
+            <input type="file" class="form-control" name="images_files" id="images_files" multiple="">
+          </div>
+          <div class="form-group">
+            <label for="date">Event Date</label>
+            <input type="text" class="form-control flatpickr flatpickr-input" id="date" name="date" data-date-format="d-m-Y" readonly="readonly">
+          </div>
+          <div class="form-group">
+            <label for="time">Event Time</label>
+            <input type="text" data-enable-time="true" data-no-calendar="true" value="17:00" class="form-control flatpickr flatpickr-input" id="time" name="time" readonly="readonly">
+          </div>
+          <div class="form-group">
+            <label for="guest_limit">Number Of Guests</label>
+            <input type="text" class="form-control" id="guest_limit" name="guest_limit">
+          </div>
+          <div class="form-group">
+            <label for="unlimited_guests">No Guest Limit</label>
+            <input type="checkbox" id="unlimited_guests" name="unlimited_guests">
+          </div>
+          <div class="form-group">
+            <label for="allow_children">Children Welcome</label>
+            <input type="checkbox" id="allow_children" name="allow_children">
+          </div>
+          <div class="form-group">
+            <label for="alcohol_allowed">Alcohol Welcome</label>
+            <input type="checkbox" id="alcohol_allowed" name="alcohol_allowed">
+          </div><div class="form-group">
+            <label for="filter_guests">Guests Need To Be Approved <span class="text-muted">(Cannot Be Changed Once Created)</span></label>
+            <input type="checkbox" id="filter_guests" name="filter_guests">
+          </div>
+          <div class="form-group">
+            <label for="food">Food/Drink</label>
+            <textarea type="text" id="food" name="food" class="form-control text_input"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="description">Description Of Event</label>
+            <textarea type="text" id="description" class="form-control text_input" name="description"></textarea>
+          </div>
+          <br>
+          <h4>Event Address</h4>
+          <hr>
+          <div class="form-group">
+            <label for="user_address">Event Will Be Hosted At Your Address</label>
+            <input type="checkbox" id="user_address" name="user_address">
+          </div>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" id="streetEvent" name="street">
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="cityEvent" name="city">
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <select id="stateEvent" name="state" class="form-control">
+              <option disabled="" selected="" value=""> -- select a state -- </option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="District Of Columbia">District Of Columbia</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip Code</label>
+            <input type="text" class="form-control" id="zipEvent" name="zip">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn_event_submit" class="btn btn-default">
+          <span>Submit</span>
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+        <img src="./Salt_files/whitesalticon.png" alt="salt" class="footer_logo center-block">
+        <div class="footer_links container">
+          <div class="row">
+            <div class="col-xs-3 social_links text-center">
+              <a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+              <a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              <a href="https://www.snapchat.com/"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-xs-3">
+              <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#about.html"><h5 class="text-center">About Salt</h5></a>
+            </div>
+            <div class="col-xs-3">
+              <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#policies.html"><h5 class="text-center">Policies</h5></a>
+            </div>
+            <div class="col-xs-3">
+              <a href="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#contact.html"><h5 class="text-center">Contact</h5></a>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="sign_up" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">Sign Up</h4>
+          </div>
+          <br>
+          <div class="modal-body">
+            <form method="post" action="https://infinite-cove-48463.herokuapp.com/current_user/dashboard#" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="sign_up_firstname">First Name</label>
+                <input type="text" class="form-control" id="sign_up_firstname" name="sign_up_firstname" required="">
+              </div>
+              <div class="form-group">
+                <label for="sign_up_lastname">Last Name</label>
+                <input type="text" class="form-control" id="sign_up_lastname" name="sign_up_lastname" required="">
+              </div>
+              <div class="form-group">
+                <label for="sign_up_email">Email</label>
+                <input type="text" class="form-control" id="sign_up_email" name="sign_up_email" required="">
+              </div>
+              <div class="form-group">
+                <label for="sign_up_birth">Date of Birth <span class="text-muted">(MM/DD/YYYY)</span></label>
+                <input type="text" class="form-control" id="sign_up_birth" name="sign_up_birth" required="">
+              </div>
+              <div class="form-group">
+                <label for="sign_up_password">Password <span class="text-muted">(Minimum of 6 Characters)</span></label>
+                <input type="password" class="form-control" id="sign_up_password" name="sign_up_password" required="">
+              </div>
+              <div class="form-group">
+                <label for="sign_up_password_confirm">Confirm Password</label>
+                <input type="password" class="form-control" id="sign_up_password_confirm" name="sign_up_password_confirm" required="">
+              </div>
+              <br>
+          </form></div>
+          <div class="modal-footer">
+            <button id="btn_sign_up" type="button" class="btn btn-default">
+              <span>Sign Up</span>
+            </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="login" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">Login</h4>
+          </div>
+          <br>
+          <div class="modal-body">
+            
+              <div class="form-group">
+                <label for="login_email">Email</label>
+                <input type="text" class="form-control" id="login_email" name="login_email" required="">
+              </div>
+              <div class="form-group">
+                <label for="login_password">Password</label>
+                <input type="password" class="form-control" id="login_password" name="login_password" required="">
+              </div>
+              <br>
+          </div>
+          <div class="modal-footer">
+            <span class="forgot-password">
+              <a href="https://infinite-cove-48463.herokuapp.com/password_recoveries/new">Forgot Password?</a>
+            </span>
+            <button type="button" id="btn_login" class="btn btn-default">
+              <span>Login</span>
+            </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./Salt_files/jquery.min.js"></script>
+    <script src="./Salt_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./Salt_files/config.js"></script>
+    <script src="./Salt_files/flatpickr.min.js"></script>
+    <script src="./Salt_files/handleerrors.js"></script>
+    <script src="./Salt_files/signUpLogin.js"></script>
+    <script src="./Salt_files/search.js"></script><div class="flatpickr-calendar"><div class="flatpickr-month"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><span class="flatpickr-current-month"><span class="cur_month">August </span><input class="cur_year" type="number" title="Scroll to increment"></span><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><span class="flatpickr-weekday">Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat</span></div><div class="flatpickr-days" tabindex="-1"><span class="flatpickr-day disabled">31</span><span class="flatpickr-day disabled">1</span><span class="flatpickr-day disabled">2</span><span class="flatpickr-day disabled">3</span><span class="flatpickr-day disabled">4</span><span class="flatpickr-day disabled">5</span><span class="flatpickr-day disabled">6</span><span class="flatpickr-day disabled">7</span><span class="flatpickr-day disabled">8</span><span class="flatpickr-day disabled">9</span><span class="flatpickr-day disabled">10</span><span class="flatpickr-day disabled">11</span><span class="flatpickr-day disabled">12</span><span class="flatpickr-day disabled">13</span><span class="flatpickr-day disabled">14</span><span class="flatpickr-day disabled">15</span><span class="flatpickr-day disabled">16</span><span class="flatpickr-day disabled">17</span><span class="flatpickr-day disabled">18</span><span class="flatpickr-day disabled">19</span><span class="flatpickr-day disabled">20</span><span class="flatpickr-day disabled">21</span><span class="flatpickr-day disabled">22</span><span class="flatpickr-day disabled">23</span><span class="flatpickr-day disabled">24</span><span class="flatpickr-day disabled">25</span><span class="flatpickr-day disabled">26</span><span class="flatpickr-day disabled">27</span><span class="flatpickr-day disabled">28</span><span class="flatpickr-day disabled">29</span><span class="flatpickr-day disabled">30</span><span class="flatpickr-day today" tabindex="0">31</span><span class="nextMonthDay flatpickr-day" tabindex="0">1</span><span class="nextMonthDay flatpickr-day" tabindex="0">2</span><span class="nextMonthDay flatpickr-day" tabindex="0">3</span><span class="nextMonthDay flatpickr-day" tabindex="0">4</span><span class="nextMonthDay flatpickr-day" tabindex="0">5</span><span class="nextMonthDay flatpickr-day" tabindex="0">6</span><span class="nextMonthDay flatpickr-day" tabindex="0">7</span><span class="nextMonthDay flatpickr-day" tabindex="0">8</span><span class="nextMonthDay flatpickr-day" tabindex="0">9</span><span class="nextMonthDay flatpickr-day" tabindex="0">10</span></div></div></div><div class="flatpickr-calendar"><div class="flatpickr-month"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><span class="flatpickr-current-month"><span class="cur_month">August </span><input class="cur_year" type="number" title="Scroll to increment"></span><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><span class="flatpickr-weekday">Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat</span></div><div class="flatpickr-days" tabindex="-1"><span class="flatpickr-day disabled">31</span><span class="flatpickr-day disabled">1</span><span class="flatpickr-day disabled">2</span><span class="flatpickr-day disabled">3</span><span class="flatpickr-day disabled">4</span><span class="flatpickr-day disabled">5</span><span class="flatpickr-day disabled">6</span><span class="flatpickr-day disabled">7</span><span class="flatpickr-day disabled">8</span><span class="flatpickr-day disabled">9</span><span class="flatpickr-day disabled">10</span><span class="flatpickr-day disabled">11</span><span class="flatpickr-day disabled">12</span><span class="flatpickr-day disabled">13</span><span class="flatpickr-day disabled">14</span><span class="flatpickr-day disabled">15</span><span class="flatpickr-day disabled">16</span><span class="flatpickr-day disabled">17</span><span class="flatpickr-day disabled">18</span><span class="flatpickr-day disabled">19</span><span class="flatpickr-day disabled">20</span><span class="flatpickr-day disabled">21</span><span class="flatpickr-day disabled">22</span><span class="flatpickr-day disabled">23</span><span class="flatpickr-day disabled">24</span><span class="flatpickr-day disabled">25</span><span class="flatpickr-day disabled">26</span><span class="flatpickr-day disabled">27</span><span class="flatpickr-day disabled">28</span><span class="flatpickr-day disabled">29</span><span class="flatpickr-day disabled">30</span><span class="flatpickr-day today" tabindex="0">31</span><span class="nextMonthDay flatpickr-day" tabindex="0">1</span><span class="nextMonthDay flatpickr-day" tabindex="0">2</span><span class="nextMonthDay flatpickr-day" tabindex="0">3</span><span class="nextMonthDay flatpickr-day" tabindex="0">4</span><span class="nextMonthDay flatpickr-day" tabindex="0">5</span><span class="nextMonthDay flatpickr-day" tabindex="0">6</span><span class="nextMonthDay flatpickr-day" tabindex="0">7</span><span class="nextMonthDay flatpickr-day" tabindex="0">8</span><span class="nextMonthDay flatpickr-day" tabindex="0">9</span><span class="nextMonthDay flatpickr-day" tabindex="0">10</span></div></div></div><div class="flatpickr-calendar"><div class="flatpickr-month"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><span class="flatpickr-current-month"><span class="cur_month">August </span><input class="cur_year" type="number" title="Scroll to increment"></span><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><span class="flatpickr-weekday">Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat</span></div><div class="flatpickr-days" tabindex="-1"><span class="flatpickr-day disabled">31</span><span class="flatpickr-day disabled">1</span><span class="flatpickr-day disabled">2</span><span class="flatpickr-day disabled">3</span><span class="flatpickr-day disabled">4</span><span class="flatpickr-day disabled">5</span><span class="flatpickr-day disabled">6</span><span class="flatpickr-day disabled">7</span><span class="flatpickr-day disabled">8</span><span class="flatpickr-day disabled">9</span><span class="flatpickr-day disabled">10</span><span class="flatpickr-day disabled">11</span><span class="flatpickr-day disabled">12</span><span class="flatpickr-day disabled">13</span><span class="flatpickr-day disabled">14</span><span class="flatpickr-day disabled">15</span><span class="flatpickr-day disabled">16</span><span class="flatpickr-day disabled">17</span><span class="flatpickr-day disabled">18</span><span class="flatpickr-day disabled">19</span><span class="flatpickr-day disabled">20</span><span class="flatpickr-day disabled">21</span><span class="flatpickr-day disabled">22</span><span class="flatpickr-day disabled">23</span><span class="flatpickr-day disabled">24</span><span class="flatpickr-day disabled">25</span><span class="flatpickr-day disabled">26</span><span class="flatpickr-day disabled">27</span><span class="flatpickr-day disabled">28</span><span class="flatpickr-day disabled">29</span><span class="flatpickr-day disabled">30</span><span class="flatpickr-day today" tabindex="0">31</span><span class="nextMonthDay flatpickr-day" tabindex="0">1</span><span class="nextMonthDay flatpickr-day" tabindex="0">2</span><span class="nextMonthDay flatpickr-day" tabindex="0">3</span><span class="nextMonthDay flatpickr-day" tabindex="0">4</span><span class="nextMonthDay flatpickr-day" tabindex="0">5</span><span class="nextMonthDay flatpickr-day" tabindex="0">6</span><span class="nextMonthDay flatpickr-day" tabindex="0">7</span><span class="nextMonthDay flatpickr-day" tabindex="0">8</span><span class="nextMonthDay flatpickr-day" tabindex="0">9</span><span class="nextMonthDay flatpickr-day" tabindex="0">10</span></div></div></div><div class="flatpickr-calendar"><div class="flatpickr-month"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><span class="flatpickr-current-month"><span class="cur_month">August </span><input class="cur_year" type="number" title="Scroll to increment"></span><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><span class="flatpickr-weekday">Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat</span></div><div class="flatpickr-days" tabindex="-1"><span class="flatpickr-day disabled">31</span><span class="flatpickr-day disabled">1</span><span class="flatpickr-day disabled">2</span><span class="flatpickr-day disabled">3</span><span class="flatpickr-day disabled">4</span><span class="flatpickr-day disabled">5</span><span class="flatpickr-day disabled">6</span><span class="flatpickr-day disabled">7</span><span class="flatpickr-day disabled">8</span><span class="flatpickr-day disabled">9</span><span class="flatpickr-day disabled">10</span><span class="flatpickr-day disabled">11</span><span class="flatpickr-day disabled">12</span><span class="flatpickr-day disabled">13</span><span class="flatpickr-day disabled">14</span><span class="flatpickr-day disabled">15</span><span class="flatpickr-day disabled">16</span><span class="flatpickr-day disabled">17</span><span class="flatpickr-day disabled">18</span><span class="flatpickr-day disabled">19</span><span class="flatpickr-day disabled">20</span><span class="flatpickr-day disabled">21</span><span class="flatpickr-day disabled">22</span><span class="flatpickr-day disabled">23</span><span class="flatpickr-day disabled">24</span><span class="flatpickr-day disabled">25</span><span class="flatpickr-day disabled">26</span><span class="flatpickr-day disabled">27</span><span class="flatpickr-day disabled">28</span><span class="flatpickr-day disabled">29</span><span class="flatpickr-day disabled">30</span><span class="flatpickr-day today" tabindex="0">31</span><span class="nextMonthDay flatpickr-day" tabindex="0">1</span><span class="nextMonthDay flatpickr-day" tabindex="0">2</span><span class="nextMonthDay flatpickr-day" tabindex="0">3</span><span class="nextMonthDay flatpickr-day" tabindex="0">4</span><span class="nextMonthDay flatpickr-day" tabindex="0">5</span><span class="nextMonthDay flatpickr-day" tabindex="0">6</span><span class="nextMonthDay flatpickr-day" tabindex="0">7</span><span class="nextMonthDay flatpickr-day" tabindex="0">8</span><span class="nextMonthDay flatpickr-day" tabindex="0">9</span><span class="nextMonthDay flatpickr-day" tabindex="0">10</span></div></div></div>
+        <script src="./Salt_files/flatpickr.min.js"></script>
+    <script src="./Salt_files/dashboard.js"></script>
+    <script src="./Salt_files/configImages.js"></script>
+    <script src="./Salt_files/userDashboard.bundle.js"></script>
+    <script type="text/javascript">
+        $("#date").flatpickr();
+        $("#time").flatpickr();
+    </script><div class="flatpickr-calendar"><div class="flatpickr-month"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><span class="flatpickr-current-month"><span class="cur_month">August </span><input class="cur_year" type="number" title="Scroll to increment"></span><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><span class="flatpickr-weekday">Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat</span></div><div class="flatpickr-days" tabindex="-1"><span class="flatpickr-day prevMonthDay" tabindex="0">31</span><span class="flatpickr-day" tabindex="0">1</span><span class="flatpickr-day" tabindex="0">2</span><span class="flatpickr-day" tabindex="0">3</span><span class="flatpickr-day" tabindex="0">4</span><span class="flatpickr-day" tabindex="0">5</span><span class="flatpickr-day" tabindex="0">6</span><span class="flatpickr-day" tabindex="0">7</span><span class="flatpickr-day" tabindex="0">8</span><span class="flatpickr-day" tabindex="0">9</span><span class="flatpickr-day" tabindex="0">10</span><span class="flatpickr-day" tabindex="0">11</span><span class="flatpickr-day" tabindex="0">12</span><span class="flatpickr-day" tabindex="0">13</span><span class="flatpickr-day" tabindex="0">14</span><span class="flatpickr-day" tabindex="0">15</span><span class="flatpickr-day" tabindex="0">16</span><span class="flatpickr-day" tabindex="0">17</span><span class="flatpickr-day" tabindex="0">18</span><span class="flatpickr-day" tabindex="0">19</span><span class="flatpickr-day" tabindex="0">20</span><span class="flatpickr-day" tabindex="0">21</span><span class="flatpickr-day" tabindex="0">22</span><span class="flatpickr-day" tabindex="0">23</span><span class="flatpickr-day" tabindex="0">24</span><span class="flatpickr-day" tabindex="0">25</span><span class="flatpickr-day" tabindex="0">26</span><span class="flatpickr-day" tabindex="0">27</span><span class="flatpickr-day" tabindex="0">28</span><span class="flatpickr-day" tabindex="0">29</span><span class="flatpickr-day" tabindex="0">30</span><span class="flatpickr-day today" tabindex="0">31</span><span class="nextMonthDay flatpickr-day" tabindex="0">1</span><span class="nextMonthDay flatpickr-day" tabindex="0">2</span><span class="nextMonthDay flatpickr-day" tabindex="0">3</span><span class="nextMonthDay flatpickr-day" tabindex="0">4</span><span class="nextMonthDay flatpickr-day" tabindex="0">5</span><span class="nextMonthDay flatpickr-day" tabindex="0">6</span><span class="nextMonthDay flatpickr-day" tabindex="0">7</span><span class="nextMonthDay flatpickr-day" tabindex="0">8</span><span class="nextMonthDay flatpickr-day" tabindex="0">9</span><span class="nextMonthDay flatpickr-day" tabindex="0">10</span></div></div></div><div class="flatpickr-calendar hasTime"><div class="flatpickr-time" tabindex="-1"><input class="flatpickr-hour" tabindex="0" type="number" step="1" min="0" max="13" title="Scroll to increment"><span class="flatpickr-time-separator">:</span><input class="flatpickr-minute" tabindex="0" type="number" step="5" min="-5" max="60" title="Scroll to increment"><span class="flatpickr-am-pm" title="Click to toggle" tabindex="0">PM</span></div></div>
+
+  
+
+</body></html>
