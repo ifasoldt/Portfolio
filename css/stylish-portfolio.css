@@ -244,6 +244,18 @@ hr.small {
   }
 }
 
+@media (max-width: 767px) {
+  .img-portfolio {
+    height:320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .img-portfolio {
+    height:260px;
+  }
+}
+
 .blog-item {
     margin-top: 30px;
 }
