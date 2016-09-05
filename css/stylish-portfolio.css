@@ -232,18 +232,6 @@ hr.small {
     width: 100%;
 }
 
-@media (max-width: 425px) {
-  .img-portfolio {
-    height:230px;
-  }
-}
-
-@media (max-width: 375px) {
-  .img-portfolio {
-    height:200px;
-  }
-}
-
 @media (max-width: 767px) {
   .img-portfolio {
     height:320px;
@@ -253,6 +241,18 @@ hr.small {
 @media (max-width: 600px) {
   .img-portfolio {
     height:260px;
+  }
+}
+
+@media (max-width: 425px) {
+  .img-portfolio {
+    height:230px;
+  }
+}
+
+@media (max-width: 375px) {
+  .img-portfolio {
+    height:200px;
   }
 }
 
