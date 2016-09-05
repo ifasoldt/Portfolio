@@ -441,6 +441,12 @@ margin:20px 10px 0;
 padding:7px 14px;
 }
 
+@media (max-width: 500px) {
+  .hovereffect a.info {
+    margin: 0 10px 0
+  }
+}
+
 .hovereffect a.info:hover {
 box-shadow:0 0 5px #fff;
 }
