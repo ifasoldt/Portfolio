@@ -234,7 +234,13 @@ hr.small {
 
 @media (max-width: 425px) {
   .img-portfolio {
-    height:250px;
+    height:230px;
+  }
+}
+
+@media (max-width: 425px) {
+  .img-portfolio {
+    height:200px;
   }
 }
 
