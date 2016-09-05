@@ -42,16 +42,19 @@
                 <a href="#top" onclick=$("#menu-close").click();>Portfolio</a>
             </li>
             <li>
-                <a href="#meet" onclick=$("#menu-close").click();>About</a>
+                <a href="#about" onclick=$("#menu-close").click();>About</a>
             </li>
             <li>
-                <a href="#services" onclick=$("#menu-close").click();>Skills</a>
+                <a href="#skills" onclick=$("#menu-close").click();>Skills</a>
             </li>
             <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Projects</a>
+                <a href="#projects" onclick=$("#menu-close").click();>Projects</a>
             </li>
             <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Resume</a>
+                <a href="#blog" onclick=$("#menu-close").click();>Blog</a>
+            </li>
+            <li>
+                <a href="#resume" onclick=$("#menu-close").click();>Resume</a>
             </li>
             <li>
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
@@ -61,7 +64,7 @@
 
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center text-white">
+        <div class="text-vertical-center header-text-margin text-white">
             <h1>Isaiah Fasoldt</h1>
             <h3>Software Engineer</h3>
             <br>
@@ -70,69 +73,37 @@
     </header>
 
     <!-- About -->
-    <section id="meet" class="about">
+    <section id="about" class="about-me about">
         <div class="container-fluid">
-            <div class="row text-gray about-me">
-              <div class="col-md-9 text-vertical-center about-me">
-                <h1>About Me</h1>
-                <div class="col-lg-12">
-
+              <div class="col-xs-12 text-vertical-center text-center is-flex">
+                <h2>About Me</h2>
+                <hr class="small">
+                <div class="col-sm-3 col-sm-offset-0 col-xs-6 col-xs-offset-3">
+                  <image class="img-responsive img-circle" src="img/Isaiah.jpg" />
+                </div>
+                <div class="col-sm-8 col-sm-offset-1 col-xs-12 text-left">
+                  <p class="bio-text">
+                    I'm a problem solver, a life-long learner, an adventure-seeker.
+                  </p>
+                  <p class="bio-text">
+                    In retrospect, everything in my life has led up to me becoming a programmer. My whole life, I've had a natural curiousity and hunger to know <i>why</i>. I hate not understanding something, and when a subject picques my curiosity, I devote myself to learning all there is to know about it. Programming is a subject deep enought to occupy me for the rest of my life! My time spent teaching in the South Bronx has taught me to communicate and collaborate with people from completely differenty backgrounds than me. My degree in Philosophy enables me to break problems down into their constituent parts and create logical, coherent APIs, data-structures, and websites.
+                  </p>
+                  <!-- <p class="bio-text">
+                    I took a bit of a winding road to software engineering. After graduating in 2011 with a degree in Philosophy, I immediately started teaching the humanities at a high-school in the South Bronx. There, I learned to love, collaborate with, and manage people who came from completely different backgrounds than me. In 2016, I began to teach myself Ruby in my spare time, and immediately fell in love. Like education, it offered a way to tangibly impact the world. It mapped much better than education to my analytical skills and background in philosophy. I left education and enrolled in the back-end Engineering
+                  </p> -->
+                  <p class="bio-text">
+                    The back-end engineering course at the Iron Yard has given me a great foundation. Now, I'm excited to use my skills to contribute in the workplace, and to increase my knowledge and abilities on the job.
+                  </p>
                 </div>
 
-
-
-                </div>
-                <div class="col-md-3 love-hate-bar about-me">
-                  <div class="col-lg-12">
-                    <h2 class="text-center">I Love</h2>
-                    <ul class="love">
-                      <li>
-                        Wrapping my head around something new
-                      </li>
-                      <li>
-                        Change; the beginnings of projects and the times of transition
-                      </li>
-                      <li>
-                        Creating novel solutions to difficult problems and troubling inefficiencies
-                      </li>
-                      <li>
-                        Direct communication
-                      </li>
-                      <li>
-                        The Syracuse Orange
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-12">
-                    <h2 class="text-center">I Hate</h2>
-                    <ul class="hate">
-                      <li>
-                        Using something without understanding how it works
-                      </li>
-                      <li>
-                        Crippling technical debt
-                      </li>
-                      <li>
-                        Windowless spaces
-                      </li>
-                      <li>
-                        The New England Patriots
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-
-                </div>
-            </div>
+              </div>
             <!-- /.row -->
-        </div>
         <!-- /.container -->
     </section>
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
+    <section id="skills" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -251,7 +222,7 @@
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    <section id="projects" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -265,7 +236,7 @@
                                  <h2>SALT</h2>
                                  <h4 class="text-left overlay-text">Salt is a community-building app that connects strangers for home-cooked meals. </h4>
                                  <h4 class="text-left overlay-text">A RESTful Rails app, Salt heavily integrates React.js, native JavaScript, and Google APIs. </h4>
-                                 <a class="info" href="https://infinite-cove-48463.herokuapp.com/">Website</a>
+                                 <a class="info" href="http://www.salt-up.com">Website</a>
                                  <a class="info" href="https://github.com/ifasoldt/Salt">Github Repo</a>
                               </div>
                           </div>
@@ -306,7 +277,7 @@
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="https://github.com/ifasoldt" class="btn btn-dark">More Github Repos</a>
+                    <a href="https://github.com/ifasoldt?tab=repositories" class="btn btn-dark">More Github Repos</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -316,21 +287,21 @@
     </section>
 
     <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-center col-xs-12">
-            <h1 id="blog-title"><a href="https://medium.com/@ifasoldt">Blog</a></h1>
+    <aside id="blog" class="callout is-flex">
+        <div id="blog-title" class="blog-title-text col-xs-12 cl-effect-1">
+            <a href="https://medium.com/@ifasoldt" >Blog</a>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
           <div class="blog-item">
           <a href="https://medium.com/front-end-hacking/week-7-front-end-5d6b5d41c7a9#.y6wggjaqp"><img class="img-responsive img-blog" src="img/week7.png" alt=""></a>
           </div>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
           <div class="blog-item">
           <a href="https://medium.com/@ifasoldt/tiy-week-4-5-6-rails-79aec34e7d08#.t9t50z99w"><img class="img-responsive img-blog" src="img/week6.png" alt=""></a>
           </div>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 last-blog">
           <div class="blog-item">
           <a href="https://medium.com/@ifasoldt/tiy-week-3-a-taste-of-the-good-life-4a63944ae2e2#.6kayj2cew"><img class="img-responsive img-blog" src="img/week3.png" alt=""></a>
           </div>
@@ -338,56 +309,46 @@
     </aside>
 
     <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
+    <aside id="resume" class="call-to-action bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                    <h2>Résumé</h2>
+                    <hr class="small">
+                    <a href="file:///Users/ifasoldt/Documents/IRONYARD/Portfolio/Portfolio/resume/resume.doc" class="btn btn-lg btn-light" download="Isaiah Fasoldt's Résumé">MS WORD</a>
+                    <a href="/resume/resume.pdf" class="btn btn-lg btn-dark" download="Isaiah Fasoldt's Résumé">PDF</a>
                 </div>
             </div>
         </div>
     </aside>
 
-    <!-- Map -->
-    <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-        </iframe>
-    </section>
-
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4><strong>Contact</strong>
                     </h4>
-                    <p>3481 Melrose Place
-                        <br>Beverly Hills, CA 90210</p>
+                    <p>isaiahfasoldt.com</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
-                        </li>
+                        <li><i class="fa fa-phone fa-fw"></i> (630) 962-2587</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i><a href="mailto:ifasoldt@gmail.com">ifasoldt@gmail.com</a></li>
                     </ul>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                            <a href="https://www.facebook.com/isaiah.fasoldt"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a href="https://twitter.com/IsaiahFasoldt"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                            <a href="https://www.linkedin.com/in/isaiahfasoldt"><i class="fa fa-linkedin-square fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/ifasoldt"><i class="fa fa-github-square  fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
                 </div>
             </div>
         </div>
