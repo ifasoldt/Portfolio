@@ -238,7 +238,7 @@ hr.small {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 375px) {
   .img-portfolio {
     height:200px;
   }
