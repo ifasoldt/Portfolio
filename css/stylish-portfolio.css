@@ -454,6 +454,14 @@ padding:7px 14px;
   }
 }
 
+
+@media (max-width: 375px) {
+  .overlay-text {
+    margin: 0 10px 0;
+    font-size: 14px;
+  }
+}
+
 .hovereffect a.info:hover {
 box-shadow:0 0 5px #fff;
 }
