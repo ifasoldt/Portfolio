@@ -332,7 +332,9 @@ footer {
 .text-white{
   color:white;
 }
-
+.btn-resume{
+  width: 100px;
+}
 .border-both {
   border-left: 5px solid white;
   border-right: 5px solid white;
